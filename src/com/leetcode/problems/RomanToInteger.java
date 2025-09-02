@@ -6,7 +6,7 @@ import java.util.Map;
 public class RomanToInteger {
 
 	public static void main(String[] args) {
-		String s = "MCMXCIV";
+		String s = "MCMXCV";
 		System.out.println(romanToInt(s));
 	}
 
