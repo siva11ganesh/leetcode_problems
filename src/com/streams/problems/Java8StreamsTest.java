@@ -18,12 +18,12 @@ public class Java8StreamsTest {
 	public static void main(String[] args) {
 		List<Employee> employees = List.of(new Employee("Siva", 678901.00, "Tech"),
 				new Employee("SSG", 678901.00, "Tech"), new Employee("SG", 40000.00, "IT"),
-				new Employee("Gane", 678901.00, "FIN"), new Employee("Arav", 525252.00, "IT"),
+				new Employee("Gane", 677901.00, "FIN"), new Employee("Arav", 525252.00, "IT"),
 				new Employee("Arun", 678901.00, "FIN"));
 
 		Map<String, SalaryStats> mapData = computeSalaryStats(employees);
 
-		mapData.entrySet().stream().forEach(System.out::println);
+		mapData.entrySet().forEach(System.out::println);
 
 		computeSalary(employees);
 
@@ -43,7 +43,7 @@ public class Java8StreamsTest {
 	public static void computeSalary(List<Employee> employees) {
 		employees.stream()
 				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.summingDouble(Employee::getSalary)))
-				.entrySet().stream().forEach(System.out::println);
+				.entrySet().forEach(System.out::println);
 	}
 
 	public static void findOccurence(List<String> words) {
@@ -52,15 +52,15 @@ public class Java8StreamsTest {
 	}
 
 	public static void findTotalLength(List<String> words) {
-		int a = words.stream().distinct().collect(Collectors.summingInt(CharSequence::length)).intValue();
+		int a = words.stream().distinct().mapToInt(CharSequence::length).sum();
 		System.out.println(a);
 	}
 
 	public static void findEachWordsLength(List<String> list) {
-		list.stream().map(t -> t.length()).forEach(System.out::println);
+		list.stream().map(String::length).forEach(System.out::println);
 
-		list.stream().distinct().collect(Collectors.groupingBy(t -> t, Collectors.summingInt(value -> value.length())))
-				.entrySet().stream().forEach(t -> System.out.println(t.getKey() + "," + t.getValue()));
+		list.stream().distinct().collect(Collectors.groupingBy(t -> t, Collectors.summingInt(String::length)))
+                .forEach((key, value) -> System.out.println(key + "," + value));
 	}
 
 	public static void subStringName(String name) {

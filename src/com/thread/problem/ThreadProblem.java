@@ -4,7 +4,7 @@ public class ThreadProblem {
 
 	// create a two thread - 1 thread will print odd numbers and another will print
 	// even numbers
-	private static Object lock = new Object();
+	private static final Object lock = new Object();
 	private static boolean isOdd = true;
 
 	public static void main(String[] args) {

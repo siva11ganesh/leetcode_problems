@@ -35,7 +35,7 @@ class RunnableDemo implements Runnable {
 		counter++;
 
 		if (threadLocalCounter.get() != null) {
-			threadLocalCounter.set(threadLocalCounter.get().intValue() + 1);
+			threadLocalCounter.set(threadLocalCounter.get() + 1);
 		} else {
 			threadLocalCounter.set(0);
 		}

@@ -10,10 +10,10 @@ public class StreamTerminalOperationsExample {
 
 		// forEach: Print each name
 		System.out.println("forEach:");
-		names.stream().forEach(System.out::println);
+		names.forEach(System.out::println);
 
 		// collect: Collect names starting with 'S' into a list
-		List<String> sNames = names.stream().filter(name -> name.startsWith("S")).collect(Collectors.toList());
+		List<String> sNames = names.stream().filter(name -> name.startsWith("S")).toList();
 		System.out.println("\ncollect (names starting with 'S'):");
 		sNames.forEach(System.out::println);
 
@@ -23,7 +23,7 @@ public class StreamTerminalOperationsExample {
 		System.out.println(concatenatedNames.trim());
 
 		// count: Count the number of names
-		long count = names.stream().count();
+		long count = names.size();
 		System.out.println("\ncount:");
 		System.out.println(count);
 

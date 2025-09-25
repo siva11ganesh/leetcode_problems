@@ -23,13 +23,13 @@ public class Java8StreamsProblem {
 
 		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 
-		numbers.stream().map(t -> t.intValue() * t.intValue()).filter(t -> t.intValue() % 2 == 0)
+		numbers.stream().map(t -> t * t).filter(t -> t % 2 == 0)
 				.forEach(System.out::println);
 
 		// Grouping by String Length
 		List<String> words = Arrays.asList("apple", "bat", "banana", "cat", "ant");
 
-		words.stream().collect(Collectors.groupingBy(t -> t.length())).entrySet().forEach(System.out::println);
+		words.stream().collect(Collectors.groupingBy(String::length)).entrySet().forEach(System.out::println);
 
 		// Find First Non-Repeating Character
 		String input = "swiss";

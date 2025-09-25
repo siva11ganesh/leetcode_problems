@@ -44,7 +44,7 @@ public class CommonStreams {
 		System.out.println("*****************");
 
 		Stream.iterate(new int[] { 1, 3 }, f -> new int[] { f[1], f[1] + 2 }).limit(10).map(f -> f[0])
-				.forEach(i -> System.out.println(i));
+				.forEach(System.out::println);
 		System.out.println("*****************");
 	}
 }

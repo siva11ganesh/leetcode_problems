@@ -14,11 +14,13 @@ public class TestExample {
 
 		Map<Integer, String> empIdToName = em.stream().collect(Collectors.toMap(Employee::getId, Employee::getName));
 
+		System.out.println(empIdToName);
+
 		Map<String, Long> empCount = managers.stream()
-				.collect(Collectors.groupingBy(m -> empIdToName.get(m.getEmpId()), Collectors.counting()));
+				.collect(Collectors.groupingBy(m -> String.valueOf(m.getEmpId()),Collectors.counting()));
 
 		System.out.println(empCount);
 		
-		System.out.println(empIdToName);
+
 	}
 }
