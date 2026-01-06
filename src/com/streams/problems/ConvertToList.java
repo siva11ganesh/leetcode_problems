@@ -4,10 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Spliterator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 public class ConvertToList {
 
@@ -16,11 +14,10 @@ public class ConvertToList {
 		// Stream toList()
 		Stream<String> stream = Stream.of("Apple", "Banana", "Orange");
 		List<String> list = stream.toList();
-		list.stream().forEach(System.out::println);
+		list.forEach(System.out::println);
 		System.out.println("/*******************************************************************************/");
 
-		/*******************************************************************************/
-		// Stream concat
+        // Stream concat
 		List<String> list1 = Arrays.asList("apple", "banana", "orange");
 		List<String> list2 = Arrays.asList("grape", "melon", "pineapple");
 
@@ -31,23 +28,19 @@ public class ConvertToList {
 		concatenatedStream.forEach(System.out::println);
 		System.out.println("/*******************************************************************************/");
 
-		/**********************************************************************************************************/
-
-		// Stream iterate
+        // Stream iterate
 		List<String> ll = Arrays.asList("AA", "BB", "CC");
 		Stream<String> stream3 = ll.stream();
 		stream3.iterator().forEachRemaining(System.out::println);
 		System.out.println("/*******************************************************************************/");
 
-		/*************************************************************************************************************/
-		// Stream Generate - not stop generation process
+        // Stream Generate - not stop generation process
 		// Random random = new Random();
 		// random.ints(10);
 		// Stream<Integer> randomGen = Stream.generate(random::nextInt);
 		// randomGen.forEach(System.out::println);
-		/*****************************************************************************************************************/
 
-		// Stream pipline operations
+        // Stream pipline operations
 		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 		double average = numbers.stream().filter(n -> n % 2 == 0) // Filter even numbers
 				.mapToDouble(n -> n * 2.0) // Map to doubles and multiply by 2
@@ -57,9 +50,7 @@ public class ConvertToList {
 		System.out.println(average);
 		System.out.println("/*******************************************************************************/");
 
-		/********************************************************************************************************************/
-
-		// Stream builder
+        // Stream builder
 		Stream.Builder<Integer> builder = Stream.builder();
 		builder.add(1);
 		builder.add(2);
@@ -69,18 +60,14 @@ public class ConvertToList {
 
 		System.out.println("/*******************************************************************************/");
 
-		/********************************************************************************************************************/
-
-		// Stream grouping and aggregation
+        // Stream grouping and aggregation
 		List<String> names = Arrays.asList("John", "Alice", "Bob", "Jane", "");
 		Map<Integer, Long> countByNameLength = names.stream()
 				.collect(Collectors.groupingBy(String::length, Collectors.counting()));
 		countByNameLength.entrySet().forEach(System.out::println);
 		System.out.println("/*******************************************************************************/");
 
-		/********************************************************************************************************************/
-
-		// Handle null values
+        // Handle null values
 		List<String> listNull = Arrays.asList("apple", null, "banana", null, "orange");
 		listNull.stream().map(t -> {
 			if (t == null) {
@@ -91,9 +78,7 @@ public class ConvertToList {
 		listNull.forEach(System.out::println);
 		System.out.println("/*******************************************************************************/");
 
-		/********************************************************************************************************************/
-
-		List<String> listOptional = Arrays.asList("apple", null, "banana", null, "orange");
+        List<String> listOptional = Arrays.asList("apple", null, "banana", null, "orange");
 		List<Optional<String>> optionalList = listOptional.stream().map(Optional::ofNullable).toList();
 		optionalList.forEach(System.out::println);
 
