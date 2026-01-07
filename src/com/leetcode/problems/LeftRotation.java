@@ -11,7 +11,7 @@ public class LeftRotation {
 
         int target = 3;
         leftRotation(arr, target);
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Final:" + Arrays.toString(arr));
     }
 
     static void leftRotation(int[] arr, int k) {
@@ -22,11 +22,15 @@ public class LeftRotation {
         if (k == 0)
             return;
 
-        reverse(arr, 0, len - 1);
+        reverse(arr, 0, len - 1); // entire list will be reversed
 
-        reverse(arr, 0, k - 1);
+        System.out.println("1:" + Arrays.toString(arr));
 
-        reverse(arr, k, len - 1);
+        reverse(arr, 0, k - 1); // kth length will be reversed on top the reversed list
+
+        System.out.println("2:" + Arrays.toString(arr));
+
+        reverse(arr, k, len - 1); // reverse it to normal after kth position
     }
 
     static void reverse(int[] arr, int left, int right) {

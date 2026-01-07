@@ -21,4 +21,4 @@ public class FindMissingNumbers {
 
 		return xor;
 	}
-}
+} 
