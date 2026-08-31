@@ -29,7 +29,7 @@ public class TestThread {
 
 class RunnableDemo implements Runnable {
 	int counter;
-	ThreadLocal<Integer> threadLocalCounter = new ThreadLocal<Integer>();
+	ThreadLocal<Integer> threadLocalCounter = new ThreadLocal<>();
 
 	public void run() {
 		counter++;
