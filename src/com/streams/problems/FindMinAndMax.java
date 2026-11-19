@@ -17,7 +17,7 @@ public class FindMinAndMax {
 
 		// System.out.println(a.min().getAsInt());
 
-		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> list = new ArrayList<>();
 
 		for (int a1 : arr) {
 			list.add(a1);

@@ -10,4 +10,9 @@ public class Child extends Parent {
 	void test2() {
 		System.out.println("1221");
 	}
+
+	@Override
+	void test3() {
+		System.out.println("31212");
+	}
 }

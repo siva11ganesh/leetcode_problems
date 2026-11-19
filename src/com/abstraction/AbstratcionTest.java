@@ -7,5 +7,6 @@ public class AbstratcionTest {
 		c.test(10.0);
 		c.test(1);
 		c.test2();
+		c.test3();
 	}
 }

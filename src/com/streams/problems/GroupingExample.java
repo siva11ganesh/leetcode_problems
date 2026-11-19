@@ -28,7 +28,7 @@ public class GroupingExample {
 
 		List<List<Integer>> numsList = Arrays.asList(Arrays.asList(1, 2, 5, 8, 9), Arrays.asList(1, 2, 4, 6, 7));
 
-		List<Integer> numsListFlatten = numsList.stream().flatMap(Collection::stream).collect(Collectors.toList());
+		List<Integer> numsListFlatten = numsList.stream().flatMap(Collection::stream).toList();
 
 		System.out.println(numsListFlatten.stream().distinct().sorted().collect(Collectors.toList()));
 

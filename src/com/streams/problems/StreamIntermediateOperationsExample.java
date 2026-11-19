@@ -24,7 +24,7 @@ public class StreamIntermediateOperationsExample {
 				.distinct() // Remove duplicate elements
 				.sorted() // Sort elements
 				.peek(intermediateResults::add) // Perform an action (add to set) on each element
-				.collect(Collectors.toList()); // Collect the final result into a list
+				.toList(); // Collect the final result into a list
 
 		// Print the intermediate results
 		System.out.println("Intermediate Results:");

@@ -3,6 +3,7 @@
 /.settings/
 /.idea/
 /classes/
+*.iml
 
 # Log file
 *.log

@@ -7,4 +7,6 @@ public abstract class Parent {
 	}
 	
 	abstract void test2();
+
+	abstract void test3();
 }

@@ -10,7 +10,7 @@ public class TwoSum {
 		int[] arr = { 1, 4, 3, 6, 8, 9 };
 		int target = 10;
 
-		System.out.println(Arrays.toString(twoSum(arr, target)));
+		//System.out.println(Arrays.toString(twoSum(arr, target)));
 		
 		System.out.println(Arrays.toString(twoSum2(arr, target)));
 	}
