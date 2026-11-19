@@ -3,6 +3,8 @@ package com.easyproblems;
 import com.leetcode.problems.node.ListNode;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class MergeSortedLists {
 
@@ -37,9 +39,22 @@ public class MergeSortedLists {
     public static void main(String[] args) {
         int[] list1 = {1, 2, 3};
         int[] list2 = {1, 3, 4};
+        int[] list4 = {4, 5, 6};
 
-        int[] list3 = Arrays.stream(list1).flatMap(value -> Arrays.stream(list2)).toArray();
+        int[] merged = IntStream.concat(
+                        IntStream.concat(IntStream.of(list1), IntStream.of(list2)),
+                        IntStream.of(list4))
+                .sorted()
+                .toArray();
 
-        Arrays.stream(list3).forEach(System.out::println);
+        Arrays.stream(merged).forEach(System.out::println);
+
+
+        int[] merged1 = Stream.of(list1, list2, list4)
+                .flatMapToInt(IntStream::of)
+                .sorted()
+                .toArray();
+
+        System.out.println(Arrays.toString(merged1));
     }
 }

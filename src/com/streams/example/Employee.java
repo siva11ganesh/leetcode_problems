@@ -2,27 +2,46 @@ package com.streams.example;
 
 public class Employee {
 
-	private int id;
-	private String name;
+    int id;
+    String name;
+    double salary;
 
-	public Employee(int i, String string) {
-		this.id = i;
-		this.name = string;
-	}
+    public Employee(int i, String string, double salary) {
+        this.id = i;
+        this.name = string;
+        this.salary = salary;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }

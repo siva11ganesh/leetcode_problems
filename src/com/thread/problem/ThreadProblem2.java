@@ -3,7 +3,7 @@ package com.thread.problem;
 public class ThreadProblem2 {
 	// Same Thread Problem implementation but used Runnable
 
-	private static final int LIMIT = 10;
+	private static final int LIMIT = 15;
 	private static int number = 1;
 	private static final Object lock = new Object();
 
